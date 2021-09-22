@@ -72,7 +72,7 @@ https://console.aws.amazon.com/iam/home#/roles/Boldx-Eks-Admin-Role
 2 - Update kube config
 
 ```
-aws eks update-kubeconfig --name boldtech-dev-eks --region eu-west-1 --role-arn ${ROLE_ARN}
+aws eks update-kubeconfig --name boldx-eks --region eu-west-1 --role-arn ${ROLE_ARN}
 ```
 
 3 - Test kubectl
