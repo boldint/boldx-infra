@@ -48,15 +48,15 @@ class EKS(core.Stack):
             id="BoldxEks",
             cluster_name="boldx-eks",
             version=eks.KubernetesVersion.V1_21,
-            default_capacity=2,
+            default_capacity=3,
             masters_role=cluster_admin,
             vpc=vpc
         )
 
-        cluster.add_auto_scaling_group_capacity(
-            id='AutoScalingGroup',
-            instance_type=ec2.InstanceType(node_instance_type)
-        )
+       # cluster.add_auto_scaling_group_capacity(
+       #     id='AutoScalingGroup',
+       #     instance_type=ec2.InstanceType(node_instance_type)
+       #)
 
 
 
