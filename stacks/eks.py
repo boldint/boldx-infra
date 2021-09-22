@@ -48,7 +48,7 @@ class EKS(core.Stack):
             id="BoldxEks",
             cluster_name="boldx-eks",
             version=eks.KubernetesVersion.V1_21,
-            default_capacity=3,
+            default_capacity=2,
             masters_role=cluster_admin,
             vpc=vpc
         )
