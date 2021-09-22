@@ -1,9 +1,21 @@
-# boldtech-infra
+# boldx-infra
 AWS infrastructure 
 
 -----
 
-This project contains the AWS infrastructure stack for BoldTech
+This project contains the AWS infrastructure stack for this BoldX masterclass.
+
+You can fork this repo and run it on github.
+
+You will need to set 3 repository secrets:
+
+- AWS_ACCOUNT_ID
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
+
+Alternately, you can run it locally, following the instructions below.
+
+---
 
 ###Requirements
 
@@ -12,7 +24,7 @@ This project contains the AWS infrastructure stack for BoldTech
 - kubectl
 
 
-###How to run this project
+###How to run this project manually
 
 1 - Create a python virtual environment
 
@@ -46,16 +58,16 @@ This project contains the AWS infrastructure stack for BoldTech
 
 ###How to connect to the cluster
 
-1 - Find the **arn** of the role  `boldtech-dev-eks-admin`
+1 - Find the **arn** of the role  `Boldx-Eks-Admin-Role`
 
 #####- using aws-cli:
 
 ```
-ROLE_ARN=$(aws iam get-role --role-name boldtech-dev-eks-admin | jq -r ".Role.Arn")
+ROLE_ARN=$(aws iam get-role --role-name Boldx-Eks-Admin-Role | jq -r ".Role.Arn")
 ```
 
 #####- using the console:
-https://console.aws.amazon.com/iam/home#/roles/boldtech-dev-eks-admin
+https://console.aws.amazon.com/iam/home#/roles/Boldx-Eks-Admin-Role
 
 2 - Update kube config
 
