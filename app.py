@@ -35,7 +35,7 @@ app = core.App()
 eu_west_1_vpc = Network(
     scope=app,
     id="BoldxNetwork",
-    cidr_range="172.16.0.0/24",
+    cidr_range="172.16.0.0/16",
     env=core.Environment(account=account, region=region)
 )
 
