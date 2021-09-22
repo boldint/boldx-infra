@@ -1,0 +1,15 @@
+**/.DS_Store
+**/.idea
+**/*.pyc
+*.egg-info
+
+**/venv
+**/env
+
+**/*.iml
+
+**/cdk.out
+
+*.secrets
+
+
