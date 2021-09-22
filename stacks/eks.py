@@ -53,10 +53,10 @@ class EKS(core.Stack):
             vpc=vpc
         )
 
-        cluster.add_auto_scaling_group_capacity(
-            id='AutoScalingGroup',
-            instance_type=ec2.InstanceType(node_instance_type)
-        )
+       # cluster.add_auto_scaling_group_capacity(
+       #     id='AutoScalingGroup',
+       #     instance_type=ec2.InstanceType(node_instance_type)
+       #)
 
 
 
