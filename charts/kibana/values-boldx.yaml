@@ -1,0 +1,2 @@
+
+elasticsearchHosts: "http://elasticsearch-master.monitoring.svc.cluster.local:9200"

@@ -1,0 +1,8 @@
+
+storage:
+  type: elasticsearch
+  elasticsearch:
+    scheme: http
+    host: elasticsearch-master.monitoring.svc.cluster.local
+    port: 9200
+    usePassword: false

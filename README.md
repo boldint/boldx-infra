@@ -81,5 +81,52 @@ aws eks update-kubeconfig --name boldx-eks --region eu-west-1 --role-arn ${ROLE_
 kubectl get node
 ```
 
+----
+###How to install the apps
+
+1 - Create the namespace `monitoring` 
+```
+kubectl create namespace monitoring
+```
+
+2 - Navigate to charts directory and run `install.sh`
+```
+cd charts && ./install.sh
+```
+
+---
+### APPLICATIONS
+
+---
+
+### elasticsearch
+```
+kubectl -n monitoring port-forward svc/elasticsearch-master 9200:9200
+```
+http://localhost:9200/_cat/indices
+
+http://localhost:9200/_cat/indices?format=json&pretty
+
+### grafana
+```
+kubectl -n monitoring port-forward svc/grafana 9080:80
+```
+http://localhost:9080/datasources
+
+### jaeger
+```
+kubectl -n monitoring port-forward svc/jaeger-tracing-query 9081:80
+```
+
+### kibana
+```
+kubectl -n monitoring port-forward svc/kibana-kibana 5601:5601
+```
+
+
+
+
+
+
 
 

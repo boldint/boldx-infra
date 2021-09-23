@@ -32,18 +32,18 @@ region = config.get("region")
 
 app = core.App()
 
-eu_west_1_vpc = Network(
-    scope=app,
-    id="BoldxNetwork",
-    cidr_range="172.16.0.0/16",
-    env=core.Environment(account=account, region=region)
-)
+#eu_west_1_vpc = Network(
+#   scope=app,
+#    id="BoldxNetwork",
+#    cidr_range="172.16.0.0/16",
+#    env=core.Environment(account=account, region=region)
+#)
 
 eu_west_1_eks = EKS(
     scope=app,
     id="BoldxEks",
-    env=core.Environment(account=account, region=region),
-    vpc=eu_west_1_vpc.vpc
+    env=core.Environment(account=account, region=region)
+    #vpc=eu_west_1_vpc.vpc
 )
 
 app.synth()

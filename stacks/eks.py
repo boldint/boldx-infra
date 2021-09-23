@@ -31,7 +31,7 @@ from aws_cdk import (
 
 class EKS(core.Stack):
 
-    def __init__(self, scope: core.Construct, id: str, vpc, **kwargs) -> None:
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
         node_instance_type = "m5.large"
@@ -48,15 +48,15 @@ class EKS(core.Stack):
             id="BoldxEks",
             cluster_name="boldx-eks",
             version=eks.KubernetesVersion.V1_21,
-            default_capacity=3,
-            masters_role=cluster_admin,
-            vpc=vpc
+            default_capacity=4,
+            masters_role=cluster_admin
         )
 
-       # cluster.add_auto_scaling_group_capacity(
-       #     id='AutoScalingGroup',
-       #     instance_type=ec2.InstanceType(node_instance_type)
-       #)
+        cluster.add_auto_scaling_group_capacity(
+            id='AutoScalingGroup',
+            instance_type=ec2.InstanceType(node_instance_type)
+        )
+
 
 
 
